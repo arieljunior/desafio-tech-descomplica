@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParse = require("body-parser");
+const router = require("./routers/router");
 
 const server = express();
-const router = require("./routers/router");
 
 server.use(bodyParse.json());
 server.use(bodyParse.urlencoded());
@@ -14,5 +14,5 @@ router(server, routeV1);
 const port = 5000;
 
 server.listen(port, () => {
-  console.log("Api rodando:  https://localhost:" + port);
+  console.log("Api rodando:  http://localhost:" + port);
 });

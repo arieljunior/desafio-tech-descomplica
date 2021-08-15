@@ -1,8 +1,8 @@
-const getStudents = (req, res, next) => {
+const studentModel = require('../models/student.model')
 
-    //..
-    
-    res.send([])
+const getStudents = async (req, res, next) => {
+    const students = await studentModel.selectStudents()
+    res.json(students)
 }
 
 module.exports = {
