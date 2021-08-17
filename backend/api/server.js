@@ -1,8 +1,10 @@
 const express = require("express");
 const bodyParse = require("body-parser");
 const router = require("./routers/router");
+const cors = require('cors')
 
 const server = express();
+server.use(cors())
 
 server.use(bodyParse.json());
 server.use(bodyParse.urlencoded());

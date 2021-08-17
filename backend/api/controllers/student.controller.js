@@ -1,7 +1,9 @@
 const studentModel = require('../models/student.model')
 
 const getStudents = async (req, res, next) => {
-    const students = await studentModel.selectStudents()
+
+    const {search} = req.query;
+    const students = await studentModel.selectStudents(search);
     res.json(students)
 }
 
